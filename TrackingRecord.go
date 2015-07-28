@@ -11,3 +11,5 @@ type TrackingRecord struct {
 func copy(record TrackingRecord) TrackingRecord {
 	var copyRecord := TrackingRecord{record.range.copy(),record.range.transferCode,record.range.statusCode} 
 }
+
+
