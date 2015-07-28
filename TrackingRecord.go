@@ -1,15 +1,15 @@
 package TrackingRecord
 
-import "ftm"
+import "fmt"
 
 type TrackingRecord struct {
-	range Range
 	statusCode rune
 	transferCode int
+	Range
 }
 
-func copy(record TrackingRecord) TrackingRecord {
-	var copyRecord := TrackingRecord{record.range.copy(),record.range.transferCode,record.range.statusCode} 
+func copyTrackingRecord(record TrackingRecord) TrackingRecord{
+	var copyRecord = TrackingRecord{record.statusCode,record.transferCode,copy(record.Range)} 
+	return copyRecord
 }
-
 
